@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are Wefts Right For You? | Hair Extensions Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="h1">Are Wefts Right For You?</h1>
+      <p class="sub">60‑second quiz → get your personal plan.</p>
+    </header>
+    <form class="section" id="quizForm">
+      <label class="label">Your hair density</label>
+      <select class="input" name="density" required>
+        <option value="">Select…</option>
+        <option>Fine</option>
+        <option>Medium</option>
+        <option>Thick</option>
+      </select>
+      <label class="label">Lifestyle (choose best fit)</label>
+      <select class="input" name="lifestyle" required>
+        <option value="">Select…</option>
+        <option>Low maintenance</option>
+        <option>Active / gym / swim</option>
+        <option>Heat styling often</option>
+      </select>
+      <label class="label">Past extensions experience</label>
+      <select class="input" name="experience" required>
+        <option value="">Select…</option>
+        <option>None</option>
+        <option>Wefts</option>
+        <option>Keratin bonds</option>
+        <option>Tapes</option>
+      </select>
+      <div class="cta"><button class="btn" type="submit">See My Plan</button></div>
+    </form>
+    <div class="footer">&copy; 2025 Hair Extensions Hub</div>
+  </div>
+  <script src="/assets/js/main.js"></script>
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const params = new URLSearchParams();
+      for (const [k,v] of data.entries()) params.set(k,v);
+      nav('/results.html?' + params.toString());
+    });
+  </script>
+</body>
+</html>

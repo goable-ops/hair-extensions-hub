@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Plan | Hair Extensions Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="h1">Your Weft Plan</h1>
+      <p class="sub" id="summary">Personalised suggestions based on your answers.</p>
+    </header>
+    <section class="section" id="plan">
+      <!-- JS will fill these suggestions -->
+    </section>
+    <div class="cta"><button class="btn" onclick="nav('/guide.html')">Get the Guide – $27 AUD</button></div>
+    <div class="footer">&copy; 2025 Hair Extensions Hub</div>
+  </div>
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const u = new URL(location.href);
+    const density = u.searchParams.get('density')||'—';
+    const lifestyle = u.searchParams.get('lifestyle')||'—';
+    const experience = u.searchParams.get('experience')||'—';
+    const el = document.getElementById('plan');
+    const blocks = [];
+    blocks.push(`<div class="card"><h3>Density</h3><p>${density} hair often needs careful gram planning to avoid tension. Start lighter and add rows as needed.</p></div>`);
+    blocks.push(`<div class="card"><h3>Lifestyle</h3><p>${lifestyle} means focusing on secure installs and maintenance routines that fit your week.</p></div>`);
+    blocks.push(`<div class="card"><h3>Experience</h3><p>Past with ${experience} informs what to avoid. The guide covers pros/cons vs wefts to set expectations.</p></div>`);
+    el.innerHTML = blocks.join("");
+  </script>
+</body>
+</html>

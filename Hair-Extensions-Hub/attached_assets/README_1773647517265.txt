@@ -1,0 +1,101 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  HAIR EXTENSIONS HUB — REPLIT DEPLOY INSTRUCTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FILES IN THIS FOLDER
+─────────────────────
+  index.html    →  Your homepage   (hairextensions.app/)
+  wefts.html    →  Services & booking  (hairextensions.app/wefts)
+  digital.html  →  Digital products   (hairextensions.app/digital)
+
+All three files are complete, self-contained HTML.
+No frameworks, no build steps, no npm. Just paste and go.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP-BY-STEP: HOW TO UPDATE YOUR SITE IN REPLIT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Go to replit.com and open your hairextensions.app project
+
+2. In the file explorer (left sidebar), find your existing:
+     index.html
+     wefts.html  (may be called wefts/index.html depending on setup)
+
+3. For EACH file:
+     a. Click the file in Replit to open it
+     b. Select ALL the existing content (Ctrl+A or Cmd+A)
+     c. DELETE it all
+     d. Open the matching file from this folder on your computer
+     e. Select ALL (Ctrl+A), Copy (Ctrl+C)
+     f. Paste into Replit (Ctrl+V)
+     g. Click the Save button (or Ctrl+S)
+
+4. For digital.html (NEW page — doesn't exist yet):
+     a. In Replit file explorer, click the + button to create a new file
+     b. Name it:  digital.html
+     c. Paste in the contents of digital.html from this folder
+     d. Save
+
+5. Click the big green RUN button in Replit
+
+6. Preview your site — it should look completely different!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHAT'S CHANGED FROM YOUR OLD SITE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Full redesign — dark ink + champagne gold luxury look
+✓ "City of Moreton Bay" throughout (not Sydney)
+✓ Instagram @hairextensionshub linked everywhere
+✓ Facebook hairextensionshub linked everywhere
+✓ Google reviews button links to your share URL
+✓ Hero images — cinematic hair photography
+✓ Reviews section is now a HERO — 5.0 stars front and centre
+✓ Before & After grid with social links embedded
+✓ Grams Calculator — 6-step quiz, personalised result, email capture
+✓ Facebook Marketplace callout bar on wefts.html
+✓ New digital.html page with $27 guide + coming-soon products
+✓ Fully mobile responsive
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IF YOUR REPLIT PROJECT HAS A DIFFERENT STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Some Replit projects use folders like /public/ or /static/.
+If your index.html lives inside a folder:
+  → Put all three files in that same folder
+
+If your project uses a different framework (Flask, Express etc):
+  → Message Donna's developer or come back to Claude
+     and say "my Replit uses [framework name]" — we can adapt
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AFTER YOU'VE DEPLOYED — NEXT STEPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. TEST on your phone — make sure mobile looks right
+2. TEST every link — booking form, Stan Store, social icons
+3. ADD your own before/after photos:
+   Replace the Unsplash image URLs in index.html with
+   your own photo URLs or upload images to Replit
+
+4. CONNECT your booking form to an email:
+   Search "Formspree" — free, paste one line of code
+   Your form submissions will email you directly
+
+5. CONNECT your email capture (grams calculator + digital page):
+   Search "Mailchimp embed" or use the same Formspree approach
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+YOUR LINKS (confirmed)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Instagram:      https://www.instagram.com/hairextensionshub
+Facebook:       https://www.facebook.com/hairextensionshub
+Google reviews: https://share.google/j6ou7afkEtmcL3jNB
+Stan Store:     https://stan.store/hairextensionshub
+Website:        https://hairextensions.app
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Built with Claude · Hair Extensions Hub · 2025
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

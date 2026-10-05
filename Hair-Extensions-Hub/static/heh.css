@@ -1,0 +1,56 @@
+/* Hair Extensions Hub – minimal shared styles (scoped) */
+body{
+  background:#faf9f7 url('/static/images/subtle-bg.png') top center/cover no-repeat fixed;
+  min-height:100vh;
+}
+
+.heh-wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+.heh-top{padding:40px 0 20px;background:linear-gradient(135deg,rgba(236,72,153,0.06) 0%,rgba(251,146,60,0.04) 100%);border-radius:0 0 32px 32px;margin-bottom:20px}
+.heh-hero{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;text-align:center;align-items:center}
+.heh-hero h1{margin:0;font-size:36px;line-height:1.1;background:linear-gradient(135deg,#ec4899 0%,#fb923c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.heh-hero p{margin:0;color:#555;font-size:17px;max-width:720px}
+
+.heh-choice{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0 10px}
+@media (max-width:860px){.heh-choice{grid-template-columns:1fr}}
+
+.heh-card{border:1px solid rgba(236,72,153,0.15);border-radius:20px;padding:20px;background:rgba(255,255,255,0.95);box-shadow:0 4px 20px rgba(236,72,153,0.08);backdrop-filter:blur(8px);transition:transform 0.2s ease,box-shadow 0.2s ease}
+.heh-card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(236,72,153,0.12)}
+.heh-card h2{margin:0 0 10px;font-size:19px;color:#1f2937}
+.heh-card p{margin:0 0 14px;color:#555}
+
+.heh-btnrow{display:flex;gap:10px;flex-wrap:wrap}
+.heh-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:999px;border:none;text-decoration:none;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s ease}
+.heh-btn.primary{background:linear-gradient(135deg,#ec4899 0%,#f472b6 100%);color:#fff;box-shadow:0 4px 14px rgba(236,72,153,0.3)}
+.heh-btn.primary:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(236,72,153,0.4)}
+.heh-btn.ghost{background:rgba(255,255,255,0.9);color:#ec4899;border:1px solid rgba(236,72,153,0.3)}
+.heh-btn.ghost:hover{background:#fff;border-color:#ec4899}
+
+.heh-divider{border:0;border-top:1px solid rgba(236,72,153,0.15);margin:24px 0}
+
+.heh-section{padding:24px 0}
+.heh-section h3{margin:0 0 12px;font-size:24px;color:#1f2937}
+.heh-muted{color:#64748b}
+.heh-small{font-size:13px;color:#94a3b8}
+
+.heh-tablewrap{overflow:auto;border:1px solid rgba(236,72,153,0.12);border-radius:16px;background:rgba(255,255,255,0.95)}
+.heh-table{width:100%;border-collapse:collapse;min-width:820px}
+.heh-table th,.heh-table td{padding:14px 12px;border-bottom:1px solid rgba(236,72,153,0.08);text-align:left}
+.heh-table th{background:linear-gradient(135deg,rgba(236,72,153,0.06) 0%,rgba(251,146,60,0.04) 100%);position:sticky;top:0;font-weight:600;color:#1f2937}
+.heh-table td.num{font-variant-numeric:tabular-nums}
+.heh-table tbody tr:hover{background:rgba(236,72,153,0.03)}
+
+.heh-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:860px){.heh-grid2{grid-template-columns:1fr}}
+
+.heh-bullets{margin:8px 0 0 18px;color:#555}
+.heh-bullets li{margin:6px 0}
+
+.heh-form{display:grid;gap:12px}
+.heh-form label{font-weight:600;font-size:13px;color:#374151}
+.heh-form input,.heh-form select,.heh-form textarea{
+  width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(236,72,153,0.2);
+  font-size:14px;font-family:inherit;background:rgba(255,255,255,0.9);transition:border-color 0.2s ease,box-shadow 0.2s ease
+}
+.heh-form input:focus,.heh-form select:focus,.heh-form textarea:focus{outline:none;border-color:#ec4899;box-shadow:0 0 0 3px rgba(236,72,153,0.1)}
+.heh-form textarea{min-height:110px;resize:vertical}
+.heh-foot{padding:32px 0;color:#94a3b8;font-size:13px;text-align:center}

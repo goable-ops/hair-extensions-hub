@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hair Extensions Hub — Weft services, pricing, and booking for the City of Moreton Bay. Premium Flat Weft, Mini/Genius Weft. Mobile installs by Donna.">
+<link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+<title>Services &amp; Pricing | Hair Extensions Hub · City of Moreton Bay</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#C9A96E;--gold-lt:#E8D5B0;--gold-pale:#F7F0E4;
+  --ink:#1A1208;--warm:#2C1F0E;--mid:#6B5340;--cream:#FAF6EF;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--ink);color:var(--cream);overflow-x:hidden;line-height:1.7}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(26,18,8,.92);backdrop-filter:blur(16px);border-bottom:.5px solid rgba(201,169,110,.15)}
+.nav-logo{font-family:var(--serif);font-size:1.2rem;font-weight:300;letter-spacing:.08em;color:var(--gold);text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,213,176,.65);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{font-size:.67rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:.6rem 1.4rem;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--gold-lt)}
+.nav-back{font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);border:.5px solid rgba(201,169,110,.3);padding:.5rem 1rem;text-decoration:none;transition:all .2s}
+.nav-back:hover{border-color:var(--gold)}
+
+.page-hero{padding:9rem 4rem 5rem;background:var(--warm);position:relative;overflow:hidden;border-bottom:.5px solid rgba(201,169,110,.1)}
+.page-hero::after{content:'SERVICES';position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:clamp(5rem,12vw,11rem);font-weight:300;color:var(--gold);opacity:.04;letter-spacing:.1em;pointer-events:none;white-space:nowrap}
+.overline{font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.7rem}
+.overline::before{content:'';width:26px;height:.5px;background:var(--gold);display:block;flex-shrink:0}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.5rem,4.5vw,4.5rem);font-weight:300;line-height:1.1;color:#fff;margin-bottom:1rem}
+.page-hero h1 em{font-style:italic;color:var(--gold)}
+.hero-note{font-size:.85rem;color:rgba(250,246,239,.5);max-width:520px;line-height:1.8;margin-bottom:2.5rem}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.6rem}
+.pill{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;border:.5px solid rgba(201,169,110,.25);color:var(--gold-lt);padding:.28rem .8rem}
+
+.fb-bar{background:var(--gold);padding:1.2rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.fb-bar-text{font-family:var(--serif);font-size:1.1rem;font-weight:400;font-style:italic;color:var(--ink)}
+.fb-bar-sub{font-size:.7rem;letter-spacing:.08em;color:rgba(26,18,8,.6)}
+.btn-dark{font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);background:var(--ink);padding:.75rem 1.5rem;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background .2s}
+.btn-dark:hover{background:var(--warm)}
+
+.section{padding:5rem 4rem}
+.sec-lbl{font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:flex;align-items:center;gap:.7rem}
+.sec-lbl::before{content:'';width:22px;height:.5px;background:var(--gold);display:block}
+.sec-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;color:#fff;line-height:1.15;margin-bottom:.5rem}
+.sec-title em{font-style:italic;color:var(--gold)}
+.sec-note{font-size:.82rem;color:rgba(250,246,239,.42);margin-bottom:3rem;line-height:1.75;max-width:600px}
+
+.included-strip{background:rgba(201,169,110,.07);border:.5px solid rgba(201,169,110,.12);padding:1.5rem 2.5rem;margin-bottom:3.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:1rem}
+.inc-item{display:flex;align-items:flex-start;gap:.6rem}
+.inc-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.55rem}
+.inc-text{font-size:.8rem;color:rgba(250,246,239,.65);line-height:1.5}
+.inc-text strong{color:var(--gold-lt);font-weight:500;display:block;font-size:.7rem;letter-spacing:.05em}
+
+.type-card{background:rgba(255,255,255,.02);border:.5px solid rgba(201,169,110,.12);padding:1.5rem 2rem;margin-bottom:1.5rem}
+.type-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem;flex-wrap:wrap;gap:.5rem}
+.type-name{font-family:var(--serif);font-size:1.2rem;font-weight:300;color:#fff}
+.type-badge{font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;padding:.22rem .65rem;border:.5px solid}
+.badge-standard{color:var(--gold);border-color:rgba(201,169,110,.35)}
+.badge-popular{color:var(--gold-lt);border-color:rgba(232,213,176,.4);background:rgba(201,169,110,.08)}
+.type-desc{font-size:.8rem;color:rgba(250,246,239,.42);line-height:1.65}
+
+.weft-tabs{display:flex;gap:0;margin-bottom:1.5rem;border:.5px solid rgba(201,169,110,.2);width:fit-content;flex-wrap:wrap}
+.weft-tab{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;padding:.65rem 1.35rem;cursor:pointer;color:rgba(250,246,239,.45);background:transparent;border:none;transition:all .2s;white-space:nowrap}
+.weft-tab.active{background:var(--gold);color:var(--ink)}
+.weft-tab:not(.active):hover{color:var(--gold)}
+.price-panel{display:none}
+.price-panel.active{display:block}
+.price-table-wrap{overflow-x:auto}
+.price-table{width:100%;border-collapse:collapse;min-width:500px}
+.price-table th{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:400;padding:.9rem 1.2rem;text-align:left;border-bottom:.5px solid rgba(201,169,110,.15)}
+.price-table th:not(:first-child){text-align:center}
+.price-table td{padding:.9rem 1.2rem;font-size:.88rem;color:rgba(250,246,239,.7);border-bottom:.5px solid rgba(255,255,255,.03)}
+.price-table td:not(:first-child){text-align:center;font-family:var(--serif);font-size:1rem;color:var(--cream)}
+.price-table tr:hover td{background:rgba(201,169,110,.03)}
+.price-table .row-label{font-size:.75rem;color:rgba(250,246,239,.45)}
+.price-note{font-size:.72rem;color:rgba(250,246,239,.28);margin-top:1rem;font-style:italic}
+
+.maint-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:1px;background:rgba(201,169,110,.1);margin-bottom:1rem}
+.maint-card{background:var(--warm);padding:1.75rem 1.5rem;text-align:center}
+.maint-rows{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.maint-price{font-family:var(--serif);font-size:2rem;font-weight:300;color:#fff;margin-bottom:.25rem}
+.maint-detail{font-size:.7rem;color:rgba(250,246,239,.35)}
+.not-offered{background:rgba(255,255,255,.02);border:.5px solid rgba(255,255,255,.05);padding:1rem 1.75rem;margin-top:2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.no-label{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.28);flex-shrink:0}
+.no-items{font-size:.78rem;color:rgba(250,246,239,.3)}
+
+.booking-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-bottom:3rem}
+.bstep{position:relative;padding-left:3rem}
+.bstep-num{position:absolute;left:0;top:0;font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--gold);opacity:.35;line-height:1}
+.bstep-title{font-size:.8rem;font-weight:500;letter-spacing:.05em;color:var(--gold-lt);margin-bottom:.4rem}
+.bstep-body{font-size:.78rem;color:rgba(250,246,239,.45);line-height:1.75}
+
+.form-section{background:var(--cream);padding:5rem 4rem}
+.form-section .overline{color:var(--mid)}
+.form-section .overline::before{background:var(--mid)}
+.form-section .sec-title{color:var(--ink)}
+.form-section .sec-title em{color:var(--gold)}
+.form-section .sec-note{color:var(--mid)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
+.form-field{display:flex;flex-direction:column;gap:.4rem}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);font-weight:500}
+.form-field input,.form-field select,.form-field textarea{font-family:var(--sans);font-size:.88rem;color:var(--ink);background:#fff;border:.5px solid rgba(107,83,64,.2);padding:.8rem 1rem;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none;width:100%}
+.form-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B5340' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold)}
+.form-field textarea{height:100px;resize:vertical}
+.form-submit{font-family:var(--sans);font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:1.1rem 2.5rem;border:none;cursor:pointer;transition:background .2s;width:100%}
+.form-submit:hover{background:var(--gold-lt)}
+.form-reassure{font-size:.72rem;color:rgba(107,83,64,.55);text-align:center;margin-top:.75rem;font-style:italic}
+
+.aftercare-section{background:var(--warm);padding:5rem 4rem}
+.aftercare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:2.5rem}
+.ac-card{border-top:.5px solid rgba(201,169,110,.18);padding:1.5rem 0}
+.ac-title{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem}
+.ac-body{font-size:.8rem;color:rgba(250,246,239,.45);line-height:1.75}
+
+footer{background:var(--ink);padding:2.25rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:.5px solid rgba(201,169,110,.1);flex-wrap:wrap;gap:1rem}
+.foot-logo{font-family:var(--serif);font-size:1rem;font-weight:300;color:var(--gold);letter-spacing:.06em}
+.foot-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+.foot-links a{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,246,239,.25);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--gold)}
+.foot-copy{font-size:.62rem;color:rgba(250,246,239,.15)}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  .page-hero{padding:7rem 1.5rem 4rem}
+  .fb-bar{padding:1.2rem 1.5rem}
+  .section,.aftercare-section{padding:4rem 1.5rem}
+  .booking-steps{grid-template-columns:1fr;gap:1.5rem}
+  .form-section{padding:4rem 1.5rem}
+  .form-grid{grid-template-columns:1fr}
+  footer{padding:1.5rem;flex-direction:column;text-align:center}
+  .foot-links{flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Hair Extensions Hub</a>
+  <ul class="nav-links">
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#request">Book</a></li>
+    <li><a href="/digital">Digital guides</a></li>
+  </ul>
+  <div style="display:flex;gap:.75rem;align-items:center">
+    <a href="/" class="nav-back">← Home</a>
+    <a href="#request" class="nav-cta">Request booking</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="overline">Weft services · Mobile · City of Moreton Bay</div>
+  <h1>Prices, availability<br>&amp; how to <em>book.</em></h1>
+  <p class="hero-note">Everything you need to know before reaching out — method options, full pricing, and a simple booking request. No back-and-forth, no guessing.</p>
+  <div class="hero-pills">
+    <span class="pill">New installs</span>
+    <span class="pill">Move-ups</span>
+    <span class="pill">Removals</span>
+    <span class="pill">Mobile — your suburb</span>
+    <span class="pill">Colour match included</span>
+    <span class="pill">Wefts only</span>
+  </div>
+</div>
+
+<div class="fb-bar">
+  <div>
+    <div class="fb-bar-text">Found me on Facebook Marketplace?</div>
+    <div class="fb-bar-sub">All prices and availability are right here — skip the DMs and go straight to booking below.</div>
+  </div>
+  <a href="#request" class="btn-dark">Request a booking ↓</a>
+</div>
+
+<section class="section" id="pricing">
+  <div class="sec-lbl">What's included</div>
+  <h2 class="sec-title">Every install<br><em>comes with this.</em></h2>
+  <p class="sec-note">Pricing below covers hair + install. No hidden extras for the essentials.</p>
+  <div class="included-strip">
+    <div class="inc-item"><div class="inc-dot"></div><div class="inc-text"><strong>Included</strong>Hair + installation</div></div>
+    <div class="inc-item"><div class="inc-dot"></div><div class="inc-text"><strong>Included</strong>Cutting &amp; blending</div></div>
+    <div class="inc-item"><div class="inc-dot"></div><div class="inc-text"><strong>Included</strong>Finish styling</div></div>
+    <div class="inc-item"><div class="inc-dot"></div><div class="inc-text"><strong>Included</strong>Colour match support</div></div>
+    <div class="inc-item"><div class="inc-dot"></div><div class="inc-text"><strong>Included</strong>Aftercare guidance</div></div>
+    <div class="inc-item"><div class="inc-dot"></div><div class="inc-text"><strong>Not offered</strong>Colour, washing, standalone styling</div></div>
+  </div>
+
+  <div class="type-card">
+    <div class="type-card-header">
+      <div class="type-name">Premium Flat Weft <em style="font-size:.85rem;color:var(--gold)">(Russian Premium)</em></div>
+      <span class="type-badge badge-standard">Entry point</span>
+    </div>
+    <p class="type-desc">A flat, flexible weft that sits close to the scalp. Great for fine-to-medium hair wanting volume and length. The most accessible price point without compromising on quality.</p>
+  </div>
+  <div class="type-card">
+    <div class="type-card-header">
+      <div class="type-name">Mini / Genius Weft <em style="font-size:.85rem;color:var(--gold)">(Premium)</em></div>
+      <span class="type-badge badge-popular">Most popular</span>
+    </div>
+    <p class="type-desc">Smaller, more discreet weft sections that blend seamlessly for a natural finish. Ideal for most hair types — the most requested option.</p>
+  </div>
+  <div class="type-card">
+    <div class="type-card-header">
+      <div class="type-name">Mini / Genius Weft <em style="font-size:.85rem;color:var(--gold)">(Luxury)</em></div>
+      <span class="type-badge badge-standard">Top tier</span>
+    </div>
+    <p class="type-desc">The finest quality hair available — exceptional softness, shine, and longevity. Pricing varies more at this tier due to density and colour matching complexity.</p>
+  </div>
+
+  <div class="sec-lbl" style="margin-top:3rem">Full pricing guide</div>
+  <p class="sec-note" style="margin-bottom:1.5rem">Installed pricing (hair + install). Final quote confirmed after consult — pricing can vary by density and colour match.</p>
+
+  <div class="weft-tabs">
+    <button class="weft-tab active" onclick="showTab(this,'flat')">Premium Flat Weft</button>
+    <button class="weft-tab" onclick="showTab(this,'mini')">Mini / Genius (Premium)</button>
+    <button class="weft-tab" onclick="showTab(this,'luxury')">Mini / Genius (Luxury)</button>
+    <button class="weft-tab" onclick="showTab(this,'maint')">Maintenance</button>
+  </div>
+
+  <div class="price-panel active" id="tab-flat">
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead><tr><th>Length</th><th>50g · 1 row</th><th>100g · 2 rows</th><th>150g · 3 rows</th><th>200g · 4 rows</th><th>250g · 4 rows+</th></tr></thead>
+        <tbody>
+          <tr><td class="row-label">18 inch</td><td>$350</td><td>$500</td><td>$680</td><td>$820</td><td>$950</td></tr>
+          <tr><td class="row-label">22 inch</td><td>$390</td><td>$550</td><td>$750</td><td>$900</td><td>$1,050</td></tr>
+          <tr><td class="row-label">26 inch</td><td>$450</td><td>$650</td><td>$880</td><td>$1,050</td><td>$1,220</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">Prices are a guide only. Final quote confirmed after consult.</p>
+  </div>
+
+  <div class="price-panel" id="tab-mini">
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead><tr><th>Length</th><th>50g</th><th>100g</th><th>150g</th><th>200g</th><th>250g</th></tr></thead>
+        <tbody>
+          <tr><td class="row-label">18 inch</td><td>$420</td><td>$740</td><td>$980</td><td>$1,150</td><td>$1,300</td></tr>
+          <tr><td class="row-label">22 inch</td><td>$460</td><td>$820</td><td>$1,080</td><td>$1,260</td><td>$1,450</td></tr>
+          <tr><td class="row-label">26 inch</td><td>$520</td><td>$950</td><td>$1,250</td><td>$1,450</td><td>$1,650</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">Prices are a guide only. Final quote confirmed after consult.</p>
+  </div>
+
+  <div class="price-panel" id="tab-luxury">
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead><tr><th>Length</th><th>50g</th><th>100g</th><th>150g</th><th>200g</th><th>250g</th></tr></thead>
+        <tbody>
+          <tr><td class="row-label">18 inch</td><td>$540</td><td>$950</td><td>$1,250</td><td>$1,450</td><td>$1,650</td></tr>
+          <tr><td class="row-label">22 inch</td><td>$580</td><td>$1,020</td><td>$1,350</td><td>$1,580</td><td>$1,800</td></tr>
+          <tr><td class="row-label">26 inch</td><td>$650</td><td>$1,150</td><td>$1,500</td><td>$1,750</td><td>$2,000+</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">Luxury pricing varies more due to density and colour match complexity. Final quote confirmed after consult.</p>
+  </div>
+
+  <div class="price-panel" id="tab-maint">
+    <div class="maint-grid">
+      <div class="maint-card"><div class="maint-rows">1 row · ~50g</div><div class="maint-price">$120</div><div class="maint-detail">Move-up / maintenance</div></div>
+      <div class="maint-card"><div class="maint-rows">2 rows · ~100g</div><div class="maint-price">$200</div><div class="maint-detail">Move-up / maintenance</div></div>
+      <div class="maint-card"><div class="maint-rows">3 rows · ~150g</div><div class="maint-price">$270</div><div class="maint-detail">Move-up / maintenance</div></div>
+      <div class="maint-card"><div class="maint-rows">4 rows · ~200–250g</div><div class="maint-price">$330</div><div class="maint-detail">Move-up / maintenance</div></div>
+    </div>
+    <div style="background:rgba(255,255,255,.02);border:.5px solid rgba(201,169,110,.1);padding:1.2rem 1.75rem;margin-top:1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+      <div>
+        <div style="font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem">Fix-ups &amp; styling</div>
+        <div style="font-size:.8rem;color:rgba(250,246,239,.45)">Adjustments, restyling, or any hourly work outside standard installs</div>
+      </div>
+      <div style="font-family:var(--serif);font-size:1.6rem;font-weight:300;color:#fff;white-space:nowrap">$150 / hr</div>
+    </div>
+    <p class="price-note" style="margin-top:1rem">Typical move-up schedule is every 6–8 weeks, depending on growth rate and lifestyle.</p>
+  </div>
+
+  <div class="not-offered">
+    <span class="no-label">Not offered</span>
+    <span class="no-items">Colour services &nbsp;·&nbsp; Washing &nbsp;·&nbsp; Standalone styling &nbsp;·&nbsp; Tape extensions</span>
+  </div>
+</section>
+
+<section class="section" style="background:var(--warm);padding-top:4rem;padding-bottom:4rem">
+  <div class="sec-lbl">How it works</div>
+  <h2 class="sec-title">Three steps to<br><em>your appointment.</em></h2>
+  <p class="sec-note" style="margin-bottom:2.5rem">No open calendar. This keeps bookings personal and realistic with mobile availability across the City of Moreton Bay.</p>
+  <div class="booking-steps">
+    <div class="bstep"><div class="bstep-num">01</div><div class="bstep-title">Submit your request</div><p class="bstep-body">Fill in the form below with your service, length, grams, and suburb. Not sure? Just say so — that's what the consult is for.</p></div>
+    <div class="bstep"><div class="bstep-num">02</div><div class="bstep-title">I confirm personally</div><p class="bstep-body">I'll reach out to confirm day and time based on mobile availability in your area. Usually within 24–48 hours.</p></div>
+    <div class="bstep"><div class="bstep-num">03</div><div class="bstep-title">Appointment locked in</div><p class="bstep-body">I come to you. Have your hair clean and dry, and we'll sort the rest together on the day.</p></div>
+  </div>
+</section>
+
+<section class="form-section" id="request">
+  <div class="overline">Request a booking</div>
+  <h2 class="sec-title" style="color:var(--ink)">Let's get you <em>booked in.</em></h2>
+  <p class="sec-note" style="color:var(--mid);margin-bottom:2.5rem">Fill in what you know — I'll confirm day &amp; time with you personally. Not sure on grams or length? Select "Not sure" and we'll work it out together.</p>
+  <form action="/weft-booking" method="post">
+    <div class="form-grid">
+      <div class="form-field"><label>Your name</label><input type="text" name="name" placeholder="First name" required></div>
+      <div class="form-field"><label>Mobile number</label><input type="tel" name="mobile" placeholder="04xx xxx xxx" required></div>
+      <div class="form-field"><label>Email address</label><input type="email" name="email" placeholder="you@email.com" required></div>
+      <div class="form-field"><label>Your suburb</label><input type="text" name="suburb" placeholder="Where should I come to you?" required></div>
+      <div class="form-field"><label>Service needed</label>
+        <select name="service" required>
+          <option value="">Select a service…</option>
+          <option>New install</option>
+          <option>Maintenance / move-up</option>
+          <option>Removal</option>
+          <option>Consult / quote request</option>
+        </select>
+      </div>
+      <div class="form-field"><label>Weft type</label>
+        <select name="weft_type">
+          <option value="">Select type…</option>
+          <option>Premium Flat Weft (Russian Premium)</option>
+          <option>Mini / Genius Weft (Premium)</option>
+          <option>Mini / Genius Weft (Luxury)</option>
+          <option>Not sure — need advice</option>
+        </select>
+      </div>
+      <div class="form-field"><label>Desired length</label>
+        <select name="length">
+          <option value="">Select length…</option>
+          <option>18 inch</option>
+          <option>22 inch</option>
+          <option>26 inch</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div class="form-field"><label>Grams (guide)</label>
+        <select name="grams">
+          <option value="">Select grams…</option>
+          <option>50g (1 row)</option>
+          <option>100g (2 rows)</option>
+          <option>150g (3 rows)</option>
+          <option>200g (4 rows)</option>
+          <option>250g (4 rows+)</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div class="form-field full"><label>Anything else I should know?</label><textarea name="notes" placeholder="Hair history, questions, how you found me, preferred days… anything helpful."></textarea></div>
+    </div>
+    <button type="submit" class="form-submit">Submit booking request</button>
+    <p class="form-reassure">I'll be in touch within 24–48 hours to confirm your appointment personally.</p>
+  </form>
+</section>
+
+<section class="aftercare-section">
+  <div class="sec-lbl">Aftercare</div>
+  <h2 class="sec-title">Keep your hair<br><em>lasting longer.</em></h2>
+  <div class="aftercare-grid">
+    <div class="ac-card"><div class="ac-title">Brushing</div><p class="ac-body">Brush gently morning and night. Support the weft with one hand while brushing to avoid pulling on the attachment area.</p></div>
+    <div class="ac-card"><div class="ac-title">Sleeping</div><p class="ac-body">Always tie hair in a loose braid or low ponytail before bed. A silk or satin pillowcase helps reduce friction significantly.</p></div>
+    <div class="ac-card"><div class="ac-title">Products</div><p class="ac-body">Use sulfate-free shampoo and conditioner. Keep oils and heavy products away from the attachment area to avoid slippage.</p></div>
+    <div class="ac-card"><div class="ac-title">Swimming &amp; exercise</div><p class="ac-body">Rinse with fresh water before and after swimming. After exercise, let hair dry fully before brushing. Tie back during workouts.</p></div>
+    <div class="ac-card"><div class="ac-title">Heat</div><p class="ac-body">Always use a heat protectant spray before any styling. Extensions can be straightened and curled — just protect them first.</p></div>
+    <div class="ac-card"><div class="ac-title">Move-ups</div><p class="ac-body">Schedule a move-up every 6–8 weeks as your hair grows out. Keeping up with this protects both your extensions and natural hair.</p></div>
+  </div>
+</section>
+
+<footer>
+  <span class="foot-logo">Hair Extensions Hub</span>
+  <div class="foot-links">
+    <a href="/">Home</a>
+    <a href="/digital">Digital guides</a>
+    <a href="https://stan.store/hairextensionshub" target="_blank" rel="noopener">Shop guides</a>
+    <a href="https://www.tiktok.com/@hair.extensions.hub" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.facebook.com/share/1DFyqa13Nu/" target="_blank" rel="noopener">Facebook</a>
+  </div>
+  <span class="foot-copy">© 2025 · Weft specialist · City of Moreton Bay &nbsp;·&nbsp; <a href="https://bizdr.app" target="_blank" rel="noopener" style="color:rgba(250,246,239,.12);text-decoration:none;transition:color .2s" onmouseover="this.style.color='rgba(201,169,110,.35)'" onmouseout="this.style.color='rgba(250,246,239,.12)'">a bizdr.app site</a></span>
+</footer>
+
+<script>
+function showTab(btn,id){
+  document.querySelectorAll('.price-panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.weft-tab').forEach(function(t){t.classList.remove('active')});
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hair Extensions Hub — Digital guides, tools and resources. The $27 Hair Extensions Guide, grams calculator, and more. Expert advice anywhere in the world.">
+<title>Digital Guides & Tools | Hair Extensions Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#C9A96E;--gold-lt:#E8D5B0;--gold-pale:#F7F0E4;
+  --ink:#1A1208;--warm:#2C1F0E;--mid:#6B5340;--cream:#FAF6EF;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.7}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(250,246,239,.92);backdrop-filter:blur(16px);border-bottom:.5px solid rgba(107,83,64,.12)}
+.nav-logo{font-family:var(--serif);font-size:1.2rem;font-weight:300;letter-spacing:.08em;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);text-decoration:none;opacity:.7;transition:opacity .2s}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.nav-book{font-size:.67rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--cream);background:var(--ink);padding:.6rem 1.4rem;text-decoration:none;transition:background .2s}
+.nav-book:hover{background:var(--warm)}
+.nav-back{font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);border:.5px solid rgba(107,83,64,.25);padding:.5rem 1rem;text-decoration:none;transition:all .2s}
+.nav-back:hover{border-color:var(--gold);color:var(--gold)}
+
+/* HERO */
+.page-hero{background:var(--ink);padding:9rem 4rem 6rem;position:relative;overflow:hidden}
+.page-hero::after{content:'LEARN';position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:clamp(5rem,14vw,13rem);font-weight:300;color:var(--gold);opacity:.04;letter-spacing:.1em;pointer-events:none;white-space:nowrap}
+.overline{font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.7rem}
+.overline::before{content:'';width:26px;height:.5px;background:var(--gold);display:block;flex-shrink:0}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.5rem,4.5vw,4.5rem);font-weight:300;line-height:1.1;color:#fff;margin-bottom:1.25rem}
+.page-hero h1 em{font-style:italic;color:var(--gold)}
+.hero-body{font-size:.88rem;color:rgba(250,246,239,.48);max-width:520px;line-height:1.85;margin-bottom:2.5rem}
+.distinction{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,169,110,.12);max-width:580px}
+.dist-side{background:rgba(255,255,255,.02);padding:1.25rem 1.5rem}
+.dist-label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem}
+.dist-label.on{color:var(--gold)}
+.dist-label.off{color:rgba(250,246,239,.25)}
+.dist-desc{font-size:.78rem;line-height:1.6}
+.dist-desc.on{color:rgba(250,246,239,.7)}
+.dist-desc.off{color:rgba(250,246,239,.25)}
+
+/* MARQUEE */
+.marquee{background:var(--gold);padding:.8rem 0;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:inline-block;animation:ticker 22s linear infinite;font-size:.63rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ink)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mdot{margin:0 1.4rem;opacity:.3}
+
+/* PRODUCTS */
+.products-section{background:var(--cream);padding:6rem 4rem}
+.sec-lbl{font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mid);margin-bottom:.75rem;display:flex;align-items:center;gap:.7rem}
+.sec-lbl::before{content:'';width:22px;height:.5px;background:var(--mid);display:block}
+.sec-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:.5rem}
+.sec-title em{font-style:italic;color:var(--gold)}
+.sec-note{font-size:.82rem;color:var(--mid);margin-bottom:3.5rem;line-height:1.75;max-width:560px}
+
+/* FEATURED PRODUCT */
+.featured-product{display:grid;grid-template-columns:1fr 1fr;border:.5px solid rgba(107,83,64,.15);margin-bottom:2rem;overflow:hidden}
+.fp-visual{background:var(--ink);padding:3.5rem;display:flex;flex-direction:column;justify-content:space-between;min-height:340px;position:relative;overflow:hidden}
+.fp-visual::before{content:'$27';position:absolute;bottom:-1rem;right:-1rem;font-family:var(--serif);font-size:9rem;font-weight:300;color:var(--gold);opacity:.07;line-height:1;pointer-events:none}
+.fp-visual-top{display:flex;justify-content:space-between;align-items:flex-start}
+.fp-badge{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:.28rem .75rem}
+.fp-live{font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:#6FCF97;display:flex;align-items:center;gap:.4rem}
+.fp-live::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:#6FCF97;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.fp-title{font-family:var(--serif);font-size:1.9rem;font-weight:300;font-style:italic;color:var(--gold);line-height:1.2}
+.fp-visual-sub{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,246,239,.22)}
+.fp-content{background:#fff;padding:3.5rem;display:flex;flex-direction:column;justify-content:space-between}
+.fp-tag{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:.5px solid rgba(107,83,64,.1)}
+.fp-title-text{font-family:var(--serif);font-size:1.5rem;font-weight:300;color:var(--ink);margin-bottom:.85rem;line-height:1.2}
+.fp-desc{font-size:.82rem;color:var(--mid);line-height:1.75;margin-bottom:1.5rem}
+.fp-includes{list-style:none;margin-bottom:2rem}
+.fp-includes li{font-size:.78rem;color:var(--mid);padding:.42rem 0;border-bottom:.5px solid rgba(107,83,64,.07);display:flex;align-items:flex-start;gap:.6rem;line-height:1.5}
+.fp-includes li::before{content:'—';color:var(--gold);flex-shrink:0}
+.fp-bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.fp-price{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--ink)}
+.fp-price span{font-size:.72rem;font-style:normal;color:var(--mid);font-family:var(--sans);letter-spacing:.05em;margin-left:.25rem}
+.btn-buy{font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);background:var(--ink);padding:.9rem 1.75rem;text-decoration:none;display:inline-block;transition:background .2s}
+.btn-buy:hover{background:var(--warm)}
+
+/* COMING SOON */
+.coming-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(107,83,64,.1)}
+.coming-card{background:var(--cream);padding:2.5rem 2rem;position:relative}
+.cc-soon{position:absolute;top:1.25rem;right:1.25rem;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(107,83,64,.4);border:.5px solid rgba(107,83,64,.15);padding:.18rem .5rem}
+.cc-icon{font-family:var(--serif);font-size:2.5rem;font-weight:300;font-style:italic;color:var(--gold);opacity:.35;margin-bottom:1.25rem;line-height:1}
+.cc-title{font-family:var(--serif);font-size:1.2rem;font-weight:300;color:var(--ink);margin-bottom:.5rem}
+.cc-desc{font-size:.78rem;color:var(--mid);line-height:1.7;margin-bottom:1.5rem}
+.cc-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.cc-tag{font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);border:.5px solid rgba(107,83,64,.18);padding:.18rem .5rem;opacity:.65}
+
+/* NOTIFY */
+.notify-section{background:var(--ink);padding:5rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.notify-section .overline{color:var(--gold)}
+.notify-section .overline::before{background:var(--gold)}
+.notify-section .sec-title{color:#fff}
+.notify-section .sec-title em{color:var(--gold)}
+.notify-body{font-size:.85rem;color:rgba(250,246,239,.45);line-height:1.8;margin-top:1rem}
+.what-coming{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.coming-item{display:flex;align-items:center;gap:1rem;padding:.9rem 1.25rem;background:rgba(255,255,255,.02);border:.5px solid rgba(201,169,110,.08);margin-bottom:.5rem}
+.ci-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.4;flex-shrink:0}
+.ci-text{font-size:.8rem;color:rgba(250,246,239,.45)}
+.ci-text strong{color:rgba(250,246,239,.7);font-weight:400;display:block;font-size:.75rem}
+.notify-form{display:flex;flex-direction:column;gap:.75rem;margin-top:1.75rem}
+.notify-input{font-family:var(--sans);font-size:.85rem;color:var(--ink);background:var(--cream);border:.5px solid rgba(201,169,110,.2);padding:.85rem 1rem;outline:none;transition:border-color .2s;width:100%}
+.notify-input:focus{border-color:var(--gold)}
+.notify-submit{font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);background:var(--gold);border:none;padding:1rem 2rem;cursor:pointer;transition:background .2s}
+.notify-submit:hover{background:var(--gold-lt)}
+.notify-note{font-size:.68rem;color:rgba(250,246,239,.2);font-style:italic}
+.notify-sent{display:none;font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--gold-lt);padding:.5rem 0}
+
+/* WHY DIGITAL */
+.why-section{background:var(--gold-pale);padding:5rem 4rem}
+.why-section .sec-lbl{color:var(--mid)}
+.why-section .sec-lbl::before{background:var(--mid)}
+.why-section .sec-title{color:var(--ink)}
+.why-section .sec-title em{color:var(--gold)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:3rem}
+.why-num{font-family:var(--serif);font-size:3rem;font-weight:300;color:var(--gold);opacity:.35;line-height:1;margin-bottom:1rem}
+.why-title{font-size:.85rem;font-weight:500;letter-spacing:.04em;color:var(--ink);margin-bottom:.5rem}
+.why-body{font-size:.78rem;color:var(--mid);line-height:1.75}
+
+/* CTA FOOTER */
+.cta-footer{background:var(--warm);padding:5rem 4rem;text-align:center;position:relative;overflow:hidden}
+.cta-footer::before{content:'KNOWLEDGE';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(4rem,10vw,10rem);font-weight:300;color:var(--gold);opacity:.04;white-space:nowrap;letter-spacing:.1em;pointer-events:none}
+.cta-footer .sec-title{color:#fff;max-width:480px;margin:0 auto 2rem}
+.cta-footer .sec-title em{color:var(--gold)}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+.btn-light{font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:1rem 2rem;text-decoration:none;transition:background .2s}
+.btn-light:hover{background:var(--gold-lt)}
+.btn-ghost{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-lt);border:.5px solid rgba(201,169,110,.35);padding:1rem 2rem;text-decoration:none;transition:all .2s}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+footer{background:var(--ink);padding:2.25rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:.5px solid rgba(201,169,110,.1);flex-wrap:wrap;gap:1rem}
+.foot-logo{font-family:var(--serif);font-size:1rem;font-weight:300;color:var(--gold);letter-spacing:.06em}
+.foot-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+.foot-links a{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,246,239,.25);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--gold)}
+.foot-copy{font-size:.62rem;color:rgba(250,246,239,.15)}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  .page-hero{padding:7rem 1.5rem 4rem}
+  .distinction{grid-template-columns:1fr}
+  .products-section,.why-section,.notify-section,.cta-footer{padding:4rem 1.5rem}
+  .featured-product{grid-template-columns:1fr}
+  .fp-visual{min-height:220px;padding:2rem}
+  .fp-content{padding:2rem}
+  .coming-grid,.why-grid{grid-template-columns:1fr}
+  .notify-section{grid-template-columns:1fr;gap:3rem}
+  footer{padding:1.5rem;flex-direction:column;text-align:center}
+  .foot-links{flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Hair Extensions Hub</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/wefts">Services &amp; pricing</a></li>
+    <li><a href="#notify">Get notified</a></li>
+  </ul>
+  <div style="display:flex;gap:.75rem;align-items:center">
+    <a href="/" class="nav-back">← Home</a>
+    <a href="/wefts#request" class="nav-book">Book an appointment</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="overline">Digital products · Guides &amp; tools</div>
+  <h1>Expert hair knowledge,<br><em>wherever you are.</em></h1>
+  <p class="hero-body">Can't get to Moreton Bay — or just not ready to book? These guides and tools give you Donna's expertise in a format you can use right now, on your own terms.</p>
+  <div class="distinction">
+    <div class="dist-side">
+      <div class="dist-label on">Digital guides &amp; tools</div>
+      <div class="dist-desc on">Buy once, use anytime. No appointment needed. Perfect if you're researching, comparing, or not local.</div>
+    </div>
+    <div class="dist-side" style="border-left:.5px solid rgba(201,169,110,.1)">
+      <div class="dist-label off">In-person weft services</div>
+      <div class="dist-desc off">Mobile installs in the City of Moreton Bay. For when you're ready to book. <a href="/wefts" style="color:rgba(250,246,239,.3);text-decoration:underline">See services →</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-inner">Instant download <span class="mdot">·</span> Expert advice <span class="mdot">·</span> Available anywhere <span class="mdot">·</span> No appointment needed <span class="mdot">·</span> Written by a specialist <span class="mdot">·</span> Practical, honest guidance <span class="mdot">·</span> Instant download <span class="mdot">·</span> Expert advice <span class="mdot">·</span> Available anywhere <span class="mdot">·</span> No appointment needed <span class="mdot">·</span> Written by a specialist <span class="mdot">·</span> Practical, honest guidance <span class="mdot">·</span></div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section">
+  <div class="sec-lbl">Available now</div>
+  <h2 class="sec-title">The guide that<br><em>saves you regret.</em></h2>
+  <p class="sec-note">Before you spend hundreds on extensions, read this. It'll tell you exactly what to look for — and what to avoid.</p>
+
+  <div class="featured-product">
+    <div class="fp-visual">
+      <div class="fp-visual-top">
+        <span class="fp-badge">Available now</span>
+        <span class="fp-live">Live</span>
+      </div>
+      <div>
+        <div class="fp-title">The Hair<br>Extensions<br>Guide</div>
+        <div class="fp-visual-sub">Instant digital download</div>
+      </div>
+    </div>
+    <div class="fp-content">
+      <div>
+        <div class="fp-tag">Beginner to intermediate · All methods</div>
+        <div class="fp-title-text">Everything you wish someone told you before getting extensions.</div>
+        <p class="fp-desc">A straightforward, no-jargon guide written by a weft specialist. Whether you're comparing methods, worried about damage, or trying to figure out how many grams you need — this covers it all.</p>
+        <ul class="fp-includes">
+          <li>How to pick the right method (and avoid expensive regret)</li>
+          <li>How many grams you actually need for your hair type</li>
+          <li>What to ask any stylist before you pay a cent</li>
+          <li>Care tips that make your extensions last longer</li>
+          <li>Red flags to watch for when choosing a salon or stylist</li>
+        </ul>
+      </div>
+      <div class="fp-bottom">
+        <div class="fp-price">$27 <span>one-time · instant download</span></div>
+        <a href="https://stan.store/hairextensionshub" target="_blank" rel="noopener" class="btn-buy">Get the guide →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMING SOON -->
+  <div class="sec-lbl" style="margin-top:4rem">Coming soon</div>
+  <h2 class="sec-title" style="margin-bottom:2rem">More tools<br><em>in the works.</em></h2>
+  <div class="coming-grid">
+    <div class="coming-card">
+      <span class="cc-soon">Coming soon</span>
+      <div class="cc-icon">▶</div>
+      <div class="cc-title">Weft Care Masterclass</div>
+      <p class="cc-desc">A video course covering everything from wash day routine to move-up preparation. Keep your wefts looking salon-fresh at home.</p>
+      <div class="cc-tags"><span class="cc-tag">Video</span><span class="cc-tag">Self-paced</span><span class="cc-tag">Aftercare</span></div>
+    </div>
+    <div class="coming-card">
+      <span class="cc-soon">Coming soon</span>
+      <div class="cc-icon">◎</div>
+      <div class="cc-title">Grams Calculator</div>
+      <p class="cc-desc">Answer a few simple questions about your hair density, length, and goal — and get a personalised grams and row recommendation instantly.</p>
+      <div class="cc-tags"><span class="cc-tag">Interactive</span><span class="cc-tag">Free tool</span><span class="cc-tag">Personalised</span></div>
+    </div>
+    <div class="coming-card">
+      <span class="cc-soon">Coming soon</span>
+      <div class="cc-icon">◈</div>
+      <div class="cc-title">Colour Match Guide</div>
+      <p class="cc-desc">A visual guide to understanding undertones, levels, and how to communicate your colour accurately with any stylist — so you get a seamless blend every time.</p>
+      <div class="cc-tags"><span class="cc-tag">Visual guide</span><span class="cc-tag">Colour theory</span><span class="cc-tag">Printable</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTIFY / WAITLIST -->
+<section class="notify-section" id="notify">
+  <div>
+    <div class="overline">Stay in the loop</div>
+    <h2 class="sec-title" style="color:#fff">Be first to<br>know when new<br><em>products drop.</em></h2>
+    <p class="notify-body">New guides and tools are in progress. Drop your email and I'll let you know the moment something new goes live — no spam, just a heads-up.</p>
+  </div>
+  <div>
+    <div class="what-coming">What's coming</div>
+    <div class="coming-item"><div class="ci-dot"></div><div class="ci-text"><strong>Weft Care Masterclass</strong>Video course on home maintenance</div></div>
+    <div class="coming-item"><div class="ci-dot"></div><div class="ci-text"><strong>Grams Calculator</strong>Free personalised tool</div></div>
+    <div class="coming-item"><div class="ci-dot"></div><div class="ci-text"><strong>Colour Match Guide</strong>Visual download &amp; printable</div></div>
+    <div class="coming-item" style="border-color:rgba(201,169,110,.06)"><div class="ci-dot" style="opacity:.25"></div><div class="ci-text" style="color:rgba(250,246,239,.25)">And more — subscriber-first access always</div></div>
+    <div class="notify-form">
+      <input class="notify-input" type="text" id="notifyName" placeholder="First name">
+      <input class="notify-input" type="email" id="notifyEmail" placeholder="Email address">
+      <button class="notify-submit" onclick="notifySubmit()">Notify me when it's ready</button>
+      <div class="notify-sent" id="notifySent">You're on the list! I'll be in touch 💛</div>
+      <p class="notify-note">No spam. Just a heads-up when something new goes live.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DIGITAL -->
+<section class="why-section">
+  <div class="sec-lbl">Why digital</div>
+  <h2 class="sec-title">Knowledge that<br><em>travels with you.</em></h2>
+  <div class="why-grid">
+    <div>
+      <div class="why-num">01</div>
+      <div class="why-title">No appointment needed</div>
+      <p class="why-body">Get the same expert guidance whether you're in Moreton Bay or anywhere in the world. Download, read, and apply at your own pace.</p>
+    </div>
+    <div>
+      <div class="why-num">02</div>
+      <div class="why-title">Saves you money</div>
+      <p class="why-body">Understanding what you need before you book means no wasted consult fees, no wrong method, and no expensive do-overs.</p>
+    </div>
+    <div>
+      <div class="why-num">03</div>
+      <div class="why-title">Written by someone who does this daily</div>
+      <p class="why-body">Not a generic beauty blog post. Real guidance from a mobile weft specialist who has seen every hair type and heard every question.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FOOTER -->
+<div class="cta-footer">
+  <div class="sec-lbl" style="justify-content:center;color:var(--gold);margin-bottom:1rem"><span style="display:block;width:22px;height:.5px;background:var(--gold)"></span>Ready?</div>
+  <h2 class="sec-title">Start with the<br><em>$27 guide.</em></h2>
+  <div class="cta-actions">
+    <a href="https://stan.store/hairextensionshub" target="_blank" rel="noopener" class="btn-light">Get the guide — $27</a>
+    <a href="/wefts#request" class="btn-ghost">Book an appointment instead</a>
+  </div>
+  <p style="font-size:.72rem;color:rgba(250,246,239,.22);font-style:italic">Instant download · One-time payment · No subscription</p>
+</div>
+
+<footer>
+  <span class="foot-logo">Hair Extensions Hub</span>
+  <div class="foot-links">
+    <a href="/">Home</a>
+    <a href="/wefts">Book a service</a>
+    <a href="https://stan.store/hairextensionshub" target="_blank" rel="noopener">Shop now</a>
+    <a href="https://www.instagram.com/hairextensionshub" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/hairextensionshub" target="_blank" rel="noopener">Facebook</a>
+  </div>
+  <span class="foot-copy">© 2025 · Digital products by Donna</span>
+</footer>
+
+<script>
+function notifySubmit(){
+  var name=document.getElementById('notifyName').value;
+  var email=document.getElementById('notifyEmail').value;
+  if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
+  document.querySelector('.notify-submit').style.display='none';
+  document.getElementById('notifySent').style.display='block';
+}
+</script>
+</body>
+</html>

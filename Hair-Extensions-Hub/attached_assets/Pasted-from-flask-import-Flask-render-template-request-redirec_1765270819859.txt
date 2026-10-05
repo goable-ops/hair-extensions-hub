@@ -1,0 +1,88 @@
+from flask import Flask, render_template, request, redirect, url_for
+import json
+from datetime import datetime
+import os
+
+app = Flask(__name__)
+
+# Ensure a folder exists to store responses (for now)
+os.makedirs("responses", exist_ok=True)
+
+
+@app.route("/", methods=["GET"])
+def index():
+    # TODO: later, verify a token or payment flag here if you only want paid clients to access
+    return render_template("index.html")
+
+
+@app.route("/submit", methods=["POST"])
+def submit():
+    # Collect form data
+    data = {
+        "timestamp": datetime.utcnow().isoformat(),
+        "client_name": request.form.get("client_name", "").strip(),
+        "email": request.form.get("email", "").strip(),
+        "country": request.form.get("country", "").strip(),
+        "state_region": request.form.get("state_region", "").strip(),
+        "city": request.form.get("city", "").strip(),
+        "suburb": request.form.get("suburb", "").strip(),
+        "nearest_hub": request.form.get("nearest_hub", "").strip(),
+        "travel_radius": request.form.get("travel_radius", "").strip(),
+        "search_channels": request.form.getlist("search_channels"),
+        "main_goal": request.form.get("main_goal", "").strip(),
+        "dream_hair": request.form.get("dream_hair", "").strip(),
+        "hair_length": request.form.get("hair_length", "").strip(),
+        "hair_thickness": request.form.get("hair_thickness", "").strip(),
+        "hair_texture": request.form.get("hair_texture", "").strip(),
+        "hair_colour": request.form.get("hair_colour", "").strip(),
+        "changing_colour": request.form.get("changing_colour", "").strip(),
+        "wash_frequency": request.form.get("wash_frequency", "").strip(),
+        "heat_styling": request.form.get("heat_styling", "").strip(),
+        "activity_level": request.form.get("activity_level", "").strip(),
+        "maintenance_level": request.form.get("maintenance_level", "").strip(),
+        "install_budget": request.form.get("install_budget", "").strip(),
+        "maintenance_budget": request.form.get("maintenance_budget", "").strip(),
+        "had_extensions_before": request.form.get("had_extensions_before", "").strip(),
+        "previous_methods": request.form.getlist("previous_methods"),
+        "previous_issues": request.form.getlist("previous_issues"),
+        "preferred_stylist_type": request.form.get("preferred_stylist_type", "").strip(),
+        "stylists_considering": request.form.get("stylists_considering", "").strip(),
+        "specialisation_needed": request.form.getlist("specialisation_needed"),
+        "scalp_hair_health": request.form.get("scalp_hair_health", "").strip(),
+        "medications": request.form.get("medications", "").strip(),
+        "biggest_concern": request.form.get("biggest_concern", "").strip(),
+        "extra_notes": request.form.get("extra_notes", "").strip(),
+    }
+
+    # Save to a JSON file (one per client for now)
+    safe_name = data["client_name"].replace(" ", "_") or "client"
+    filename = f"responses/{datetime.utcnow().strftime('%Y%m%d-%H%M%S')}_{safe_name}.json"
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+    # TODO: Here is where you'll:
+    # 1) Call OpenAI with this `data` as JSON to generate the personalised plan
+    # 2) Render the HTML template for the PDF
+    # 3) Convert HTML -> PDF
+    # 4) Email / send PDF to the client
+
+    return redirect(url_for("thank_you", client_name=data["client_name"]))
+
+
+@app.route("/thank-you")
+def thank_you():
+    client_name = request.args.get("client_name", "lovely")
+    return f"""
+    <html>
+        <head><title>Thank You</title></head>
+        <body style="font-family: system-ui; background:#f7f3f2; padding:40px;">
+            <h2>Thank you, {client_name}!</h2>
+            <p>Your answers have been received. I'll now create your personalised Hair Extensions Plan and email it to you.</p>
+            <p>You can close this page now.</p>
+        </body>
+    </html>
+    """
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080, debug=True)
