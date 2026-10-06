@@ -20,7 +20,7 @@ a{color:inherit} nav{position:fixed;z-index:20;top:0;left:0;right:0;display:flex
 .marquee{background:var(--gold);color:var(--ink);padding:.8rem;text-align:center;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase}
 section{padding:6rem 7vw}.light{background:var(--cream);color:var(--ink)}.warm{background:var(--warm)}h2{font:300 clamp(2.4rem,4vw,4rem)/1.05 var(--serif);margin-bottom:1rem}.lead{max-width:720px;color:rgba(250,246,239,.55);margin-bottom:3rem}.light .lead{color:var(--mid)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,169,110,.16)}.card{background:var(--ink);padding:2rem}.light .card{background:#fff}.card .small{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}.card h3{font:300 1.55rem var(--serif);margin:.45rem 0}.price{font:300 2.4rem var(--serif);color:var(--gold);margin:.6rem 0}.light .price{color:#9b7742}.card p{font-size:.8rem;color:rgba(250,246,239,.52)}.light .card p{color:var(--mid)}
-.note{margin-top:1.5rem;padding:1.25rem 1.5rem;border-left:2px solid var(--gold);background:rgba(201,169,110,.07);font-size:.8rem}
+.note{margin-top:1.5rem;padding:1.25rem 1.5rem;border-left:2px solid var(--gold);background:rgba(201,169,110,.07);font-size:.8rem}.packages{margin-top:3rem}.packages h3{font:300 2rem var(--serif);margin-bottom:.4rem}.package-intro{color:var(--mid);font-size:.85rem;margin-bottom:1.5rem}.package-table{width:100%;border-collapse:collapse;background:#fff}.package-table th,.package-table td{padding:1rem 1.1rem;border-bottom:1px solid rgba(44,31,14,.12);text-align:left}.package-table th{background:var(--ink);color:var(--gold-lt);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase}.package-table td:not(:first-child){font:400 1.15rem var(--serif);color:#9b7742}.package-table tr:last-child td{border-bottom:0}.package-note{margin-top:1rem;font-size:.76rem;color:var(--mid)}
 .hair-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}.hair-card{border:1px solid rgba(201,169,110,.18);padding:2rem}.hair-card h3{font:300 1.8rem var(--serif);color:var(--gold-lt)}.hair-card ul{margin:1rem 0 0 1rem;color:rgba(250,246,239,.55);font-size:.82rem}.hair-card li{margin:.45rem 0}
 .results{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}.result{aspect-ratio:3/4;position:relative;overflow:hidden;background:var(--warm)}.result img,.result video{width:100%;height:100%;object-fit:cover}.caption{position:absolute;left:0;right:0;bottom:0;padding:2rem 1.25rem 1rem;background:linear-gradient(transparent,rgba(26,18,8,.9));font:italic 1rem var(--serif)}
 .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.review{border:1px solid rgba(201,169,110,.16);padding:2rem}.stars{color:var(--gold);letter-spacing:.08em}.review blockquote{font:italic 1.05rem/1.65 var(--serif);color:rgba(250,246,239,.75);margin:1rem 0}.review span{font-size:.68rem;color:rgba(250,246,239,.4)}
@@ -52,7 +52,7 @@ footer{padding:2rem 7vw;display:flex;justify-content:space-between;gap:1rem;flex
 <section class="light" id="services">
   <div class="eyebrow">Simple, transparent pricing</div>
   <h2>Services &amp; <em>maintenance.</em></h2>
-  <p class="lead">No complicated packages. Choose the service you need, or message Donna with a photo if you are unsure.</p>
+  <p class="lead">Choose a maintenance service, BYO installation, or a complete hair + installation package.</p>
   <div class="cards">
     <article class="card"><div class="small">BYO hair</div><h3>Fresh weft installation</h3><div class="price">$250</div><p>A fresh installation using your own suitable weft hair. Cutting, blending and finish included.</p></article>
     <article class="card"><div class="small">Maintenance</div><h3>Move-up · up to 100g</h3><div class="price">$200</div><p>Regular move-up and refit for up to 100 grams of existing weft hair.</p></article>
@@ -62,17 +62,34 @@ footer{padding:2rem 7vw;display:flex;justify-content:space-between;gap:1rem;flex
     <article class="card"><div class="small">Complex removal</div><h3>Matting &amp; detangling</h3><div class="price">$150/hr</div><p>Where significant matting means extra removal and detangling time is required.</p></article>
   </div>
   <div class="note"><strong>Maintenance timing:</strong> most clients require move-ups around every 6–8 weeks, depending on growth, hair type and home care. If you are unsure which service applies, send a current photo first.</div>
+  <div class="packages">
+    <div class="eyebrow">Hair supplied + fitted</div>
+    <h3>Full Hair Packages</h3>
+    <p class="package-intro">Complete packages include your selected hair and professional installation.</p>
+    <table class="package-table">
+      <thead><tr><th>Hair option</th><th>100g</th><th>150g</th><th>200g</th></tr></thead>
+      <tbody>
+        <tr><td>Premium Flat Weft · 18&quot;</td><td>$600</td><td>$900</td><td>$1,200</td></tr>
+        <tr><td>Premium Flat Weft · 22&quot;</td><td>$650</td><td>$950</td><td>$1,250</td></tr>
+        <tr><td>Premium Flat Weft · 26&quot;</td><td>$700</td><td>$1,050</td><td>$1,400</td></tr>
+        <tr><td>Luxury Flat Weft · 18&quot;</td><td>$850</td><td>$1,200</td><td>$1,600</td></tr>
+        <tr><td>Luxury Flat Weft · 22&quot;</td><td>$850</td><td>$1,250</td><td>$1,650</td></tr>
+        <tr><td>Luxury Flat Weft · 26&quot;</td><td>$900</td><td>$1,350</td><td>$1,750</td></tr>
+      </tbody>
+    </table>
+    <p class="package-note">Not sure whether you need 100g, 150g or 200g? Send Donna a clear photo of your current hair and the length and result you want.</p>
+  </div>
 </section>
 
 <section id="hair">
   <div class="eyebrow">Hair supplied by Hair Extensions Hub</div>
   <h2>Choose the hair that <em>suits you.</em></h2>
-  <p class="lead">Hair is selected around your natural density, desired length, colour and the result you want. Available lengths include 18", 22" and 26". Final supplied-hair pricing is confirmed before ordering because the amount and hair type required varies by client.</p>
+  <p class="lead">Hair is selected around your natural density, desired length, colour and the result you want. Available lengths include 18", 22" and 26". Choose from premium and luxury options, with full supplied-and-fitted package pricing shown above.</p>
   <div class="hair-grid">
     <article class="hair-card"><div class="eyebrow">Premium</div><h3>Premium Flat Weft</h3><p>Flat, flexible double-drawn Remy hair designed to sit close to the scalp. A strong option for clients wanting natural volume and length without unnecessary bulk.</p><ul><li>18", 22" and 26" lengths</li><li>50g, 100g, 150g and 200g plans depending on the client</li><li>Colour-match support before ordering</li></ul></article>
     <article class="hair-card"><div class="eyebrow">Premium &amp; luxury</div><h3>Mini / Genius Weft</h3><p>A finer, discreet weft option for a seamless finish. Available in premium and luxury hair depending on softness, density, longevity and budget.</p><ul><li>18", 22" and 26" lengths</li><li>Amount tailored to your natural hair and goal</li><li>Installation quote confirmed with your hair selection</li></ul></article>
   </div>
-  <div class="note"><strong>Why no giant price chart?</strong> The right amount of hair matters more than selling everyone the same package. Send Donna a current photo plus the length you want and she can confirm the appropriate hair amount and total before anything is ordered.</div>
+  <div class="note"><strong>Not sure how much hair you need?</strong> The right amount depends on your natural density and the result you want. Send Donna a current photo plus your preferred length and she can recommend the most suitable package.</div>
 </section>
 
 <section class="warm" id="results">
