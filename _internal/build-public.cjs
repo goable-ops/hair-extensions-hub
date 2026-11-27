@@ -8,7 +8,7 @@ if(fs.existsSync(out))throw Error('Build output already exists. Use a fresh chec
 fs.mkdirSync(out);
 const mode=process.env.BIZDR_BUILD_MODE||'preview';
 if(!['preview','production'].includes(mode))throw Error('Invalid build mode');
-for(const p of [...pages,...(mode==='preview'?['calendar-demo.html']:[])]){const source=fs.readFileSync(path.join(root,p),'utf8');for(const m of source.matchAll(/\/static\/[A-Za-z0-9%_.,()\-/]+(?:\.[A-Za-z0-9]+)?/g)){let rel=decodeURIComponent(m[0].slice(1));if(rel.includes('..'))throw Error('Invalid asset path');assets.add(rel)}include(p);}
+for(const p of [...pages,...(mode==='preview'?['calendar-demo.html','enquiry.html']:[])]){const source=fs.readFileSync(path.join(root,p),'utf8');for(const m of source.matchAll(/\/static\/[A-Za-z0-9%_.,()\-/]+(?:\.[A-Za-z0-9]+)?/g)){let rel=decodeURIComponent(m[0].slice(1));if(rel.includes('..'))throw Error('Invalid asset path');assets.add(rel)}include(p);}
 for(const p of assets)include(p);
 include('_headers');include('_redirects');include('robots.txt');include('sitemap.xml');
 if(mode==='production')throw Error('Production build intentionally blocked pending owner approval and final noindex/terms review.');
