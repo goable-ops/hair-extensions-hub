@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /owner
+Disallow: /owner-cloud/
+Disallow: /availability-cloud/
+Disallow: /calendar-demo
+Disallow: /_internal/
+
+Sitemap: https://hairextensions.app/sitemap.xml
