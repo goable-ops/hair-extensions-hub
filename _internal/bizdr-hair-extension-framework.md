@@ -1,4 +1,13 @@
-# BizDr hair extension business framework
+# BizDr modular small-business growth framework
+## Product architecture
+Hair Extensions Hub is the first industry pilot, not the limit of the product. A repeatable core with configurable modules supports independent, affordable small-business deployments. The commercial offer is a bespoke website and measurable digital operating system, not a generic theme and not a mandatory replacement for existing software.
+- Core for every business: discovery and business goals; brand-led accessible website; local/organic search; useful original content; clear conversion actions; privacy and security baseline; customer/enquiry management; campaign attribution; reporting and owner handover.
+- Optional modules: appointments and availability for service businesses; quotes and proposals for businesses that estimate work; product/catalogue and checkout for retail; repeat-client reminders for recurring services; social content planning; existing payment/CRM/accounting integration; automation only where it has a measurable business benefit.
+- Hair extension module: suitability consultation, product/length/weight and pricing comparison, maintenance intervals, client-specific hair specifications, travel buffer, consent for transformation imagery.
+- Every new industry requires its own service workflow, terms, regulatory and accessibility review. Never copy health, tax, licensing, privacy or cancellation assumptions across industries or countries.
+- Each client retains a distinct website, brand, deployment, data, credentials, integrations, and ownership. Reusable code and processes are shared; private business information is not.
+- Budget approach: start with a small paid or fixed-scope core that solves the biggest constraint. Add modules only when the expected time savings or customer acquisition benefit justifies the cost. Preserve existing tools that work, and measure results before recommending expanded spending.
+- Measure success: qualified leads, bookings or orders, completed sales, retained clients, actual contribution margin, time saved, acquisition costs and evidence quality. Engagement alone is not success.
 ## Launch gates (Australia / Queensland pilot)
 1. Confirm legal entity, registered trading name, ABN, GST status, public contact details, genuine service area, and licence/infection-control requirements for specific services and council. No personal residential address by default for a mobile operator; confirm an appropriate business contact.
 2. Review consumer terms (final total price, cancellation/deposit policy, refunds and non-excludable Australian Consumer Law guarantees), verify testimonials and photo permissions. Confirm all price data and maintenance guidance.
